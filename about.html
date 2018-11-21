@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {background-color: lightgray;}
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: sticky;
+            top: 0;
+        }
+
+        li {
+            float: left;
+            height: 46px;
+        }
+        #logo {
+            width: 50px;
+        }
+
+        li:last-child {
+            border-right: none;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            background-color: #333;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover:not(.active) {
+            background-color: #111;
+            color: white;
+        }
+        .active {
+            background-color: rgb(255, 115, 0);
+        }
+    </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li id="logo">   
+                    <img src="/Users/josephmccombs/figuro3d/userInterface/fig3d-logo.png" alt="Figuro3D logo" width="50px" height="50px" />
+                </li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a class="active" href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <h3>Our Mission</h3>
+        <p>To make 3D scanning as quick and simple as taking a picture.​
+        </p>
+        <h3>Who We Are</h3>
+        <p>
+                We are a group of entrepreneurs, hardware engineers, and programmers that 
+                believe capturing 3D images quickly leads to more innovative, more productive, 
+                and more meaningful work. We are dedicated to making 3D capture easy, intuitive, 
+                and useful.
+        </p>
+        <h3>Our Expertise</h3>
+        <p>
+                Our team consists of experts in the fields of hardware development, embedded 
+                systems, 3D imaging, machine vision, computational infrastructure, scientific 
+                gateways, computational workflows in distributed systems, and machine learning.
+        </p>
+        <h3>Our Story</h3>
+        <p>
+                Our team collaborated with the Digital Historical Architecture Research and 
+                Materials Analysis (DHARMA) to create digital 3D models of World Heritage Sites, 
+                such as the Roman Forum and the Taj Mahal. We have demonstrated our technology 
+                and 3D capture applications at various technology conferences.  After realizing 
+                the positive impact faster 3D scanning can have on the world, we formed Figuro3D.
+        </p>
+    </body>
+</html>

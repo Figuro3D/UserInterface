@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {background-color: lightgray;}
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: sticky;
+            top: 0;
+        }
+
+        li {
+            float: left;
+            height: 46px;
+        }
+        #logo {
+            width: 50px;
+        }
+
+        li:last-child {
+            border-right: none;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            background-color: #333;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover:not(.active) {
+            background-color: #111;
+            color: white;
+        }
+        .active {
+            background-color: rgb(255, 115, 0);
+        }
+    </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li id="logo">   
+                    <img src="/Users/josephmccombs/figuro3d/userInterface/fig3d-logo.png" alt="Figuro3D logo" width="50px" height="50px" />
+                </li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a class="active" href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <h3>Contact Figuro 3D</h3>
+        <p>
+            Phone: +1 (312) 884-9762
+        </p>
+        <p>
+            Email: info@figuro3d.com
+        </p>
+    </body>
+</html>

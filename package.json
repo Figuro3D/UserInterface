@@ -1,0 +1,14 @@
+{
+  "name": "userinterface",
+  "version": "1.0.0",
+  "description": "User Interface for 3D Viewer",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Joseph McCombs",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^3.0.8"
+  }
+}
