@@ -1,0 +1,14 @@
+create database EPIDatabase;
+use EPIDatabase;
+create table partTest (part varchar(30), result bool);
+insert into partTest values ('Base Color', 1);
+insert into partTest values ('Valve Open Direction', 0);
+insert into partTest values ('Valve Closed', 1);
+insert into partTest values ('Valve Color', 1);
+insert into partTest values ('Warning Label', 0);
+insert into partTest values ('Weight Label', 1);
+insert into partTest values ('Product Serial Number', 0);
+insert into partTest values ('Screws Inserted', 1);
+insert into partTest values ('Fitting', 0);
+insert into partTest values ('Lid', 1);
+insert into partTest values ('Tank Size', 1);

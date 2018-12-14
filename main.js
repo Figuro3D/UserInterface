@@ -2,6 +2,7 @@ const {app, BrowserWindow} = require('electron');
 const path = require('path');
 const url = require('url');
 
+
 //init win
 let win;
 
@@ -27,9 +28,11 @@ function createWindow(){
 //run create window function
 app.on('ready', createWindow);
 
+
 //quit when all windows are clsoed
 app.on('window-all-closed', () => {
     if(process.platform !== 'darwin'){
         app.quit();
+        connection.end();
     }
 })

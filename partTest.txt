@@ -1,0 +1,11 @@
+Base Color	\N	\N	Red	\N\r
+Valve Open Direction	\N	\N	\N	Left\r
+Valve Closed		1	0	\N	\N\r
+Valve Color		\N	\N	Blue	\N\r
+Warning Label		1	0	\N	\N\r
+Weight Label		1	0	\N	\N\r
+Product Serial Number	1	0	\N	\N\r
+Screws Inserted		0	1	\N	\N\r
+Fitting			1	0	\N	\N\r
+Lid			0	1	\N	\N\r
+Tank Size		1	0	\N	\N\r

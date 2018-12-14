@@ -9,6 +9,7 @@
   "author": "Joseph McCombs",
   "license": "ISC",
   "dependencies": {
-    "electron": "^3.0.8"
+    "electron": "^3.0.10",
+    "mysql": "^2.16.0"
   }
 }

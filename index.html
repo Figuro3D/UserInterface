@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <style>    
-                body {
+           body {
                     background-color: lightgray;
                     }
                 
@@ -22,16 +22,30 @@
                 ul {
                     color: black
                     }
-                
-                table, th {
+                #navbar {
+                    overflow:hidden;
+                }
+
+                table{
                     size: 70px;
                     border: 1px solid black;
                     border-collapse: collapse;
-                    text-align: left;
                     padding: 5px;
                     color: black;
                     font-style: initial;
+                    background: rgb(255, 115, 0);
+                    float: left;
                     }
+                
+                th {
+                    size: 70px;
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                    padding: 5px;
+                    color: black;
+                    font-style: initial;
+                    background: rgb(255, 115, 0);
+                }
 
                 td {
                     border: 1px solid black;
@@ -40,6 +54,10 @@
                     padding: 5px;
                     color: black;
                     background-color: white;
+                }
+
+                td :nth-child(even) {
+                    background-color: lightgray;
                 }
                 
                 #myProgress {
@@ -68,7 +86,6 @@
                     top: 0;
                     border: #333;
                 }
-
                 li {
                     float: left;
                     height: 46px;
@@ -76,6 +93,12 @@
                 
                 #logo {
                     width: 50px;
+                }
+
+                #epiLogo {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;    
                 }
 
                 li a {
@@ -87,7 +110,6 @@
                     padding: 14px;
                     text-decoration: none;
                 }
-
                 li a:hover:not(.active) {
                     background-color: #111;
                 }
@@ -108,7 +130,7 @@
                     color: white;
                     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),
                     0 17px 50px 0 rgba(0,0,0,0.19);
-                }           
+                }                   
         </style>
     </head>
     <body>
@@ -135,114 +157,217 @@
         </div>
         <br>
         <h3>Results</h3>
-        <table width="75%">
+        <table id="table" width="50%">
             <tr>
-                <th>Item Number </th>
-                <th>Part Number</th>
-                <th>Description</th>
-                <th>Pass/Fail</th>
+                <th>Part</th>
+                <th>Result</th>
             </tr>
             <tr>
-                <td>1</td>
-                <td>TBD</td>
-                <td>Correct Base Color</td>
-                <td id="item1"></td>
+                <td background-color="red">Base Color</td>
+                <td id="item1"><b></b></td>
             </tr>
             <tr>
-                <td>2</td>
-                <td>TBD</td>
                 <td>Valve Open Direction</td>
                 <td id="item2"></td>
             </tr>
             <tr>
-                <td>3</td>
-                <td>TBD</td>
-                <td>Valve Orientation</td>
+                <td>Valve Closed</td>
                 <td id="item3"></td>
             </tr>
             <tr>
-                <td>4</td>
-                <td>TBD</td>
                 <td>Valve Color</td>
                 <td id="item4"></td>
             </tr>
             <tr>
-                <td>5</td>
-                <td>TBD</td>
-                <td>Pass/Fail</td>
+                <td>Warning Label</td>
                 <td id="item5"></td>
             </tr>
             <tr>
-                <td>6</td>
-                <td>TBD</td>
-                <td>KG Correct</td>
+                <td>Weight Label</td>
                 <td id="item6"></td>
             </tr>
             <tr>
-                <td>7</td>
-                <td>TBD</td>
-                <td>Pass/Fail</td>
+                <td>Product Serial Number</td>
                 <td id="item7"></td>
             </tr>
             <tr>
-                <td>8</td>
-                <td>TBD</td>
-                <td>Pass/Fail</td>
+                <td>Screws Inserted</td>
                 <td id="item8"></td>
             </tr>
             <tr>
-                <td>9</td>
-                <td>TBD</td>
-                <td>Correct Color/Part</td>
+                <td>Fitting</td>
                 <td id="item9"></td>
             </tr>
             <tr>
-                <td>10</td>
-                <td>TBD</td>
-                <td>Correct Diameter/Correct Lid</td>
+                <td>Lid</td>
                 <td id="item10"></td>
             </tr>
             <tr>
-                <td>11</td>
-                <td>TBD</td>
-                <td>Correct Tank</td>
+                <td>Tank Size</td>
                 <td id="item11"></td>
             </tr>
         </table>
+        <div id="scanImage"></div>
+        <img id="epiLogo" src="/Users/josephmccombs/figuro3d/userInterface/elkhartlogo.png" alt="EPI logo" />
         
     </body>
     <script>
+        
         function startScan() {
             let elem = document.getElementById("myBar"); 
             let width = 0;
             let id = setInterval(frame, 10);
             function frame() {
-                if (width >= 100) {
-                    clearInterval(id);
-                } else {
-                    width++; 
-                    elem.style.width = width + '%'; 
-                    elem.innerHTML = width * 1 + '%';
+                    if (width >= 100) {
+                        clearInterval(id);
+                    } else {
+                        width++; 
+                        elem.style.width = width + '%'; 
+                        elem.innerHTML = width * 1 + '%';
+                    } 
                 }
-            }
+            
             document.getElementById("saveScan").innerHTML="Save Scan";
-            document.getElementById("item1").innerHTML="PASS";
-            document.getElementById("item2").innerHTML="FAIL";
+            document.getElementById("item1").innerHTML="RED";
+            document.getElementById("item2").innerHTML="LEFT";
             document.getElementById("item3").innerHTML="PASS";
-            document.getElementById("item4").innerHTML="FAIL";
+            document.getElementById("item4").innerHTML="YELLOW";
             document.getElementById("item5").innerHTML="PASS";
-            document.getElementById("item6").innerHTML="FAIL";
+            document.getElementById("item6").innerHTML="PASS";
             document.getElementById("item7").innerHTML="PASS";
             document.getElementById("item8").innerHTML="FAIL";
             document.getElementById("item9").innerHTML="PASS";
             document.getElementById("item10").innerHTML="FAIL";
             document.getElementById("item11").innerHTML="PASS";
             document.getElementById("startScan").innerHTML="Next Scan";
-            
+            document.getElementById("scanImage").innerHTML=scanImg;
         }
 
         function saveScanFunction() {
             document.getElementById("saveScan").innerHTML="SCAN SAVED";
         }
+
+       
+            var mysql = require("mysql");
+
+            var connection = mysql.createConnection({
+                host: "localhost",
+                user: "root",
+                password: "Jam!46635",
+                database: "EPIDatabase"
+            });
+
+            connection.connect((err) => {
+                if(err) throw err;
+                console.log("Connection successfully established");
+                /*
+                connection.query("CREATE DATABASE mydb", function (err, result) {
+                    if (err) throw err;
+                    console.log("Database created");
+                });
+                */
+                var sql = "INSERT INTO partTest (Part, Result) VALUES ?";
+                var values = [
+                    ['Base Color', 1],
+                    ['Valve Open Direction', 0],
+                    ['Valve Closed', 1],
+                    ['Valve Color', 0],
+                    ['Warning Label', 1],
+                    ['Weight Label', 0],
+                    ['Product Serial Number', 1],
+                    ['Screws Inserted', 0],
+                    ['Fitting', 1],
+                    ['Lid', 0],
+                    ['Tank Size', 1]
+                ];
+
+                connection.query(sql, [values], function (err, result) {
+                    if (err) throw err;
+                    console.log("Number of records inserted: " + result.affectedRows);
+                });
+
+
+                connection.end(() => {
+                    console.log("Connection successfully Closed.");
+                });
+            });
+        
+            $.ajax({
+                url : 'serv.php', // your php file
+                 type : 'GET', // type of the HTTP request
+                 success : function(data){
+                     var obj = jQuery.parseJSON(data);
+                    console.log(obj);
+              }
+            });
+        /*
+         var mysql = require('mysql');
+
+        function el(selector) {
+            return document.getElementById(selector);
+        }
+        
+        el('startScan').addEventListener('click', function(){
+            // Get the mysql service
+            getFirstTenRows(function(rows){
+                var html = '';
+
+                rows.forEach(function(row){
+                    html += '<tr>';
+                    html += '<td>';
+                    html += row.part;
+                    html += '</td>';
+                    html += '<td>';
+                    html += row.result;
+                    html += '</td>';
+                    html += '</tr>';
+                    console.log(row);
+                });
+
+                document.querySelector('#table > tbody').innerHTML = html;
+            });
+        },false);
+        
+        function getFirstTenRows(callback){
+            var mysql = require('mysql');
+
+            // Add the credentials to access your database
+            var connection = mysql.createConnection({
+                host     : 'localhost',
+                user     : 'root',
+                password : 'Jam!46635',
+                database : 'EPIDatabase'
+            });
+
+            // connect to mysql
+            connection.connect(function(err) {
+                // in case of error
+                if(err){
+                    console.log(err.code);
+                    console.log(err.fatal);
+                }
+            });
+
+            // Perform a query
+            $query = 'SELECT `part`,`result` FROM `partTest` LIMIT 10';
+
+            connection.query($query, function(err, rows, fields) {
+                if(err){
+                    console.log("An error ocurred performing the query.");
+                    console.log(err);
+                    return;
+                }
+
+                callback(rows);
+
+                console.log("Query succesfully executed");
+            });
+
+            // Close the connection
+            connection.end(function(){
+                // The connection has been closed
+            });
+        }
+        */
     </script>
 </html>
