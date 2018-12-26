@@ -27,7 +27,7 @@ function createWindow(){
 
 //run create window function
 app.on('ready', createWindow);
-
+ 
 
 //quit when all windows are clsoed
 app.on('window-all-closed', () => {
