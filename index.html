@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <style>    
                 body {
-                     background-color: #e5e5e5;
+                    background-color: #e5e5e5;
                     font-family: sans-serif;
                     font-size: 120%;
                     }
@@ -17,7 +17,7 @@
                     background-color: rgb(255, 115, 0);
                     font-weight: 500;
                     font-size: 130%;
-                    padding: 15px 32px;
+                    padding: 20px 40px;
                     border-radius: 16px;
                     }
                 
@@ -27,6 +27,7 @@
                 #navbar {
                     overflow:hidden;
                     text-align: center;
+                    padding-bottom: 20px;
                 }
 
                 table {
@@ -40,7 +41,7 @@
                     table-layout: fixed;
                     width: 45%;
                     background-color: rgb(255, 115, 0)
-                    }
+                }
                 
                 th {
                     size: 70px;
@@ -97,9 +98,11 @@
                     top: 0;
                     border: #333;
                 }
+
                 li {
                     float: left;
                     height: 46px;
+                    padding-bottom: 4px;
                 }
                 
                 #logo {
@@ -108,7 +111,7 @@
 
                 #epiLogo {
                     display: block; 
-                    padding-top: 30px;
+                    padding-top: 40px;
                     margin-left: auto;
                     margin-right: auto;   
                 }
@@ -132,6 +135,7 @@
                     float: right;
                     width: 45%;
                 }
+
                 li a:hover:not(.active) {
                     background-color: #111;
                 }
@@ -146,13 +150,6 @@
                     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),
                     0 17px 50px 0 rgba(0,0,0,0.19);
                 }
-                
-                .saveScanClass:hover {
-                    background-color:rgb(255, 115, 0);
-                    color: white;
-                    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),
-                    0 17px 50px 0 rgba(0,0,0,0.19);
-                }                   
         </style>
     </head>
     <body>
@@ -162,29 +159,23 @@
                     <img src="/Users/josephmccombs/figuro3d/userInterface/fig3d-logo.png" alt="Figuro3D logo" width="50px" height="50px" />
                 </li>
                 <li><a class="active" href="index.html">Dashboard</a></li>
-                <!--
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="about.html">About</a></li>                
-                -->
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
         <div id="actions">
             <h3>Actions</h3>
             <p><b>Start Scan:</b> Start the first scan and view the results in the table below.</p>
-            <p><b>Save Scan:</b> Save the currrent scan for future use.</p>
             <p><b>Next Scan:</b> Once you have viewed the results from the table below, hit 'Next Scan' to begin another scan.</p>
         </div>
         <p></p>
         <button id="startScan" class="button startScanClass" onclick="startScan()" onclick="fillValues()" onclick="addScanTank()">Start Scan</button>
-        <button id="saveScan" class="button saveScanClass" onclick="saveScanFunction()">Save Scan</button>
         <h3>Progress</h3>
         <div id="myProgress">
                 <div id="myBar"></div>
         </div>
         <br>
         <h3>Results</h3>
-        <table id="table" width="45%" height="437">
+        <table id="table" width="45%" height="508px">
             <thead>
                 <tr>
                     <th>Part</th>
@@ -272,7 +263,6 @@
                     } 
                 }
             
-            document.getElementById("saveScan").innerHTML="Save Scan";
             document.getElementById("item1").innerHTML="Red";
             document.getElementById("pF1").innerHTML="&#9989";
             document.getElementById("item2").innerHTML="Left";
@@ -297,12 +287,6 @@
             document.getElementById("pF11").innerHTML="&#9989";
             
             document.getElementById("startScan").innerHTML="Next Scan";
-        }
-
-        function addScanTank() {
-            var img = document.createElement('img');
-            img.src = "/Users/josephmccombs/figuro3d/userInterface/scanTank.jpeg";
-            document.getElementById("scanImage");
         }
 
         function saveScanFunction() {
