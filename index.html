@@ -209,26 +209,7 @@
                 .instructions {
                     font-size: 90%;
                 }
-/*
-                header, section, aside, footer {
-                    margin: 0 1.5% 24px 1.5%;
-                }
 
-                section {
-                    float: left;
-                    width: 50%;
-                }
-
-                aside {
-                    float: right;
-                    width: 50%;
-                }
-
-                footer {
-                    clear: both;
-                    margin-bottom: 0;
-                }
-*/
         </style>
     </head>
     <body>
@@ -236,7 +217,7 @@
             <nav id="navbar">
                 <ul>
                     <li id="logo">   
-                        <img src="/Users/josephmccombs/figuro3d/userInterface/fig3d-logo.png" alt="Figuro3D logo" width="50px" height="50px" />
+                        <img src="images/fig3d-logo-black.png" alt="Figuro3D logo" width="50px" height="50px" />
                     </li>
                     <li><a class="active" href="index.html">Dashboard</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -249,91 +230,11 @@
             <div class="col-12" id="actions">
                 <h3>Instructions</h3>
                 <ol class="instructions">
-                    <li>Press the 'Scan' button to begin the scan and view the results.</li>
+                    <li>Press the 'Scan' button to begin the scan. Once the scan is complete, press the 'OK' button and view the results.</li>
                     <li>The data is automatically saved at this point.</li>
                     <li>Press the 'Scan' button again to begin another scan.</li>
                 </ol>
             </div> 
-            
-            <!--
-            <section>
-                <div class="col-12">
-                    <button id="startScan" class="button startScanClass" onclick="startScan()">Scan</button>
-                    <h3>Progress</h3>
-                    <div id="myProgress">
-                            <div id="myBar"></div>
-                    </div>
-                    <br>
-                    <h3>Results</h3>
-                    <table id="table" width="100%" height="508px">
-                        <thead>
-                            <tr>
-                                <th>Part</th>
-                                <th>Result</th>
-                                <th>Pass/Fail</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Base Color</td>
-                                <td id="item1"></td>
-                                <td id="pF1"></td>
-                            </tr>
-                            <tr>
-                                <td>Valve Open Direction</td>
-                                <td id="item2"></td>
-                                <td id="pF2"></td>
-                            </tr>
-                            <tr>
-                                <td>Valve Closed</td>
-                                <td id="item3"></td>
-                                <td id="pF3"></td>
-                            </tr>
-                            <tr>
-                                <td>Valve Color</td>
-                                <td id="item4"></td>
-                                <td id="pF4"></td>
-                            </tr>
-                            <tr>
-                                <td>Warning Label</td>
-                                <td id="item5"></td>
-                                <td id="pF5"></td>
-                            </tr>
-                            <tr>
-                                <td>Weight Label</td>
-                                <td id="item6"></td>
-                                <td id="pF6"></td>
-                            </tr>
-                            <tr>
-                                <td>Product Serial Number</td>
-                                <td id="item7"></td>
-                                <td id="pF7"></td>
-                            </tr>
-                            <tr>
-                                <td>Screws Inserted</td>
-                                <td id="item8"></td>
-                                <td id="pF8"></td>
-                            </tr>
-                            <tr>
-                                <td>Fitting</td>
-                                <td id="item9"></td>
-                                <td id="pF9"></td>
-                            </tr>
-                            <tr>
-                                <td>Lid</td>
-                                <td id="item10"></td>
-                                <td id="pF10"></td>
-                            </tr>
-                            <tr>
-                                <td>Tank Size</td>
-                                <td id="item11"></td>
-                                <td id="pF11"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        -->
             <div id="left-side">
                 <div class="col-12">
                 <button id="startScan" class="button startScanClass" onclick="startScan()">Scan</button>
@@ -411,57 +312,46 @@
                 </table>
             </div>
             </div>
-
-            <!--
-                <aside>
-                <div class="col-12" id="actions">
-                    <h3>Actions</h3>
-                    <p><b>Start Scan:</b> Start the first scan and view the results in the table below.</p>
-                    <p><b>Next Scan:</b> Once you have viewed the results from the table below, hit 'Next Scan' to begin another scan.</p>
-                </div>
-    
-                <div class="col-12">
-                    <img id="scanImage" src="/Users/josephmccombs/figuro3d/userInterface/scanTank.jpeg" alt="Scanned Tank" width="45%" height="508px"/>
-                </div>
-            </aside> 
-            -->
-
             <div>
-                <img id="scanImage" src="/Users/josephmccombs/figuro3d/userInterface/scanTank.jpeg" alt="Scanned Tank" width="45%" height="508px"/>
+                <img id="scanImage" src="images/scanTank.jpeg" alt="Scanned Tank" width="45%" height="508px"/>
             </div>
             
         </div>
 
         <div class="footer">
-            <img id="epiLogo" src="/Users/josephmccombs/figuro3d/userInterface/elkhartlogo.png" alt="EPI logo" />
+            <img id="epiLogo" src="images/elkhartlogo.png" alt="EPI logo" />
         </div>
-        <!-- ATTEMPTING TO USE INPUT DATA FOR DB
-            <?php require_once 'process.php'; ?>
-        <div class="row justify-content-center">
-        <form action="process.php" method="POST">
-            <div class="form-group">
-                <label for="part">part</label>
-                <input type="text" name="part" class="form-control" value="Enter the part">
-            </div>
-            <div class="form-group">
-                <label for="result">result</label>
-                <input type="text" name="result" class="form-control" value="Enter the result">
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary" name="save">Save</button>
-            </div>
-        </form>
-        </div>
-        -->
     <script>
         
         function startScan() {
             let elem = document.getElementById("myBar"); 
             let width = 0;
-            let id = setInterval(frame, 10);
+            let id = setInterval(frame, 100);
             function frame() {
                     if (width >= 100) {
                         clearInterval(id);
+                        document.getElementById("item1").innerHTML="Red";
+                        document.getElementById("pF1").innerHTML="&#9989";
+                        document.getElementById("item2").innerHTML="Left";
+                        document.getElementById("pF2").innerHTML="&#9989";
+                        document.getElementById("item3").innerHTML="Pass";
+                        document.getElementById("pF3").innerHTML="&#9989";
+                        document.getElementById("item4").innerHTML="Yellow";
+                        document.getElementById("pF4").innerHTML="&#10060";
+                        document.getElementById("item5").innerHTML="Pass";
+                        document.getElementById("pF5").innerHTML="&#9989";
+                        document.getElementById("item6").innerHTML="Pass";
+                        document.getElementById("pF6").innerHTML="&#9989";
+                        document.getElementById("item7").innerHTML="Pass";
+                        document.getElementById("pF7").innerHTML="&#9989";
+                        document.getElementById("item8").innerHTML="Fail";
+                        document.getElementById("pF8").innerHTML="&#9989";
+                        document.getElementById("item9").innerHTML="Pass";
+                        document.getElementById("pF9").innerHTML="&#9989";
+                        document.getElementById("item10").innerHTML="Fail";
+                        document.getElementById("pF10").innerHTML="&#9989";
+                        document.getElementById("item11").innerHTML="Pass";
+                        document.getElementById("pF11").innerHTML="&#9989";
                         alert("The Scan is complete");
                     } else {
                         width++; 
@@ -469,68 +359,7 @@
                         elem.innerHTML = width * 1 + '%';
                     } 
                 }
-            
-            document.getElementById("item1").innerHTML="Red";
-            document.getElementById("pF1").innerHTML="&#9989";
-            document.getElementById("item2").innerHTML="Left";
-            document.getElementById("pF2").innerHTML="&#9989";
-            document.getElementById("item3").innerHTML="Pass";
-            document.getElementById("pF3").innerHTML="&#9989";
-            document.getElementById("item4").innerHTML="Yellow";
-            document.getElementById("pF4").innerHTML="&#10060";
-            document.getElementById("item5").innerHTML="Pass";
-            document.getElementById("pF5").innerHTML="&#9989";
-            document.getElementById("item6").innerHTML="Pass";
-            document.getElementById("pF6").innerHTML="&#9989";
-            document.getElementById("item7").innerHTML="Pass";
-            document.getElementById("pF7").innerHTML="&#9989";
-            document.getElementById("item8").innerHTML="Fail";
-            document.getElementById("pF8").innerHTML="&#9989";
-            document.getElementById("item9").innerHTML="Pass";
-            document.getElementById("pF9").innerHTML="&#9989";
-            document.getElementById("item10").innerHTML="Fail";
-            document.getElementById("pF10").innerHTML="&#9989";
-            document.getElementById("item11").innerHTML="Pass";
-            document.getElementById("pF11").innerHTML="&#9989";
         }
-/*
-        var mysql = require("mysql");
-
-        var connection = mysql.createConnection({
-                host:'localhost',
-                user: 'root',
-                password: 'Jam!46635',
-                database: 'EPIDatabase'
-        });
-
-        connection.connect();
-        connection.query("CREATE DATABASE mydb", function (err, result) {
-                    if (err) throw err;
-                    console.log("Database created");
-                });
-
-        var sql = "INSERT INTO partTest (Part, Result) VALUES ?";
-        var values = [
-            ['Base Color', 1],
-            ['Valve Open Direction', 0],
-            ['Valve Closed', 1],
-            ['Valve Color', 0],
-            ['Warning Label', 1],
-            ['Weight Label', 0],
-            ['Product Serial Number', 1],
-            ['Screws Inserted', 0],
-            ['Fitting', 1],
-            ['Lid', 0],
-            ['Tank Size', 1]
-        ];
-
-        connection.query('SELECT 1 + 1 AS solution', function (error, results, fields){
-            if (error) throw error;
-            console.log('The solution is: ', results[0].soltion);
-        });
-*/
-        
-       
         
         var mysql = require("mysql");
 
@@ -578,76 +407,5 @@
                 console.log("Connection successfully Closed.");
             });
         });
-    
-
-        /*
-         var mysql = require('mysql');
-
-        function el(selector) {
-            return document.getElementById(selector);
-        }
-        
-        el('startScan').addEventListener('click', function(){
-            // Get the mysql service
-            getFirstTenRows(function(rows){
-                var html = '';
-
-                rows.forEach(function(row){
-                    html += '<tr>';
-                    html += '<td>';
-                    html += row.part;
-                    html += '</td>';
-                    html += '<td>';
-                    html += row.result;
-                    html += '</td>';
-                    html += '</tr>';
-                    console.log(row);
-                });
-
-                document.querySelector('#table > tbody').innerHTML = html;
-            });
-        },false);
-        
-        function getFirstTenRows(callback){
-            var mysql = require('mysql');
-
-            // Add the credentials to access your database
-            var connection = mysql.createConnection({
-                host     : 'localhost',
-                user     : 'root',
-                password : 'Jam!46635',
-                database : 'EPIDatabase'
-            });
-
-            // connect to mysql
-            connection.connect(function(err) {
-                // in case of error
-                if(err){
-                    console.log(err.code);
-                    console.log(err.fatal);
-                }
-            });
-
-            // Perform a query
-            $query = 'SELECT `part`,`result` FROM `partTest` LIMIT 10';
-
-            connection.query($query, function(err, rows, fields) {
-                if(err){
-                    console.log("An error ocurred performing the query.");
-                    console.log(err);
-                    return;
-                }
-
-                callback(rows);
-
-                console.log("Query succesfully executed");
-            });
-
-            // Close the connection
-            connection.end(function(){
-                // The connection has been closed
-            });
-        }
-        */
     </script>
 </html>
