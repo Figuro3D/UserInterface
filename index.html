@@ -321,9 +321,13 @@
             <img id="epiLogo" src="images/elkhartlogo.png" alt="EPI logo" />
         </div>
     <script>
-        function hideAlert() {
-            document.getElementById("alert").style.display = "none"
+        function alertfunction() {
+            alert("Scan is Complete");
+            clearInterval(task);
+            document.body.style.backgroundColor = '#e5e5e5';
+            isAlertClicked = true;
         }
+       
         function startScan() {
             let elem = document.getElementById("myBar"); 
             let width = 0;
@@ -356,8 +360,7 @@
                         var image = document.getElementById("scanImage");
                         image.src = image.getAttribute('data-src');
                         document.getElementById("scanImage").style.display = "block";
-                        alert("Scan is Complete");
-                        /* trying to flash screen
+                        
                             var flash = false;
                             var task = setInterval(function() {
                                 if(flash = !flash) {
@@ -367,7 +370,18 @@
                                 }
 
                             }, 1000);
-                        */
+                        var isAlertClicked = false;
+                        if (isAlertClicked === false) {
+                            window.onclick = alertfunction;
+
+                            function alertfunction() {
+                                clearInterval(task);
+                                document.body.style.backgroundColor = '#e5e5e5';
+                                isAlertClicked = true;
+                            }
+                       }
+                        
+                        
 
                     } else {
                         width++; 
