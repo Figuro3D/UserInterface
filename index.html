@@ -113,16 +113,17 @@
                 }
 
                 #epiLogo {
+                    position: absolute;
+                    left: 650px;
+                    top: 850px;
                     display: block; 
                     padding-top: 40px;
                     margin-left: auto;
-                    margin-right: auto;
-                    padding: 50px;   
+                    margin-right: auto;  
                 }
 
                 #scanImage {
                     float: right;
-                    padding-right: 20px;
 
                 }
 
@@ -157,9 +158,7 @@
                 }
 
                 
-                * {
-                    box-sizing: border-box;
-                }
+               
 
                 .row::after {
                     content: "";
@@ -217,7 +216,7 @@
             <nav id="navbar">
                 <ul>
                     <li id="logo">   
-                        <img src="images/fig3d-logo-black.png" alt="Figuro3D logo" width="50px" height="50px" />
+                        <img src="images/fig3d-logo.png" alt="Figuro3D logo" width="50px" height="50px" />
                     </li>
                     <li><a class="active" href="index.html">Dashboard</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -312,8 +311,8 @@
                 </table>
             </div>
             </div>
-            <div>
-                <img id="scanImage" src="images/scanTank.jpeg" alt="Scanned Tank" width="45%" height="508px"/>
+            <div id="scanDiv">
+                <img id="scanImage" data-src="images/scanTank.jpeg"  width="45%" height="508px"/>
             </div>
             
         </div>
@@ -322,21 +321,23 @@
             <img id="epiLogo" src="images/elkhartlogo.png" alt="EPI logo" />
         </div>
     <script>
-        
+        function hideAlert() {
+            document.getElementById("alert").style.display = "none"
+        }
         function startScan() {
             let elem = document.getElementById("myBar"); 
             let width = 0;
-            let id = setInterval(frame, 100);
+            let id = setInterval(frame, 35);
             function frame() {
                     if (width >= 100) {
                         clearInterval(id);
-                        document.getElementById("item1").innerHTML="Red";
+                        document.getElementById("item1").innerHTML="Blue";
                         document.getElementById("pF1").innerHTML="&#9989";
                         document.getElementById("item2").innerHTML="Left";
                         document.getElementById("pF2").innerHTML="&#9989";
                         document.getElementById("item3").innerHTML="Pass";
                         document.getElementById("pF3").innerHTML="&#9989";
-                        document.getElementById("item4").innerHTML="Yellow";
+                        document.getElementById("item4").innerHTML="Blue";
                         document.getElementById("pF4").innerHTML="&#10060";
                         document.getElementById("item5").innerHTML="Pass";
                         document.getElementById("pF5").innerHTML="&#9989";
@@ -344,19 +345,57 @@
                         document.getElementById("pF6").innerHTML="&#9989";
                         document.getElementById("item7").innerHTML="Pass";
                         document.getElementById("pF7").innerHTML="&#9989";
-                        document.getElementById("item8").innerHTML="Fail";
+                        document.getElementById("item8").innerHTML="Pass";
                         document.getElementById("pF8").innerHTML="&#9989";
                         document.getElementById("item9").innerHTML="Pass";
                         document.getElementById("pF9").innerHTML="&#9989";
-                        document.getElementById("item10").innerHTML="Fail";
+                        document.getElementById("item10").innerHTML="Pass";
                         document.getElementById("pF10").innerHTML="&#9989";
                         document.getElementById("item11").innerHTML="Pass";
                         document.getElementById("pF11").innerHTML="&#9989";
-                        alert("The Scan is complete");
+                        var image = document.getElementById("scanImage");
+                        image.src = image.getAttribute('data-src');
+                        document.getElementById("scanImage").style.display = "block";
+                        alert("Scan is Complete");
+                        /* trying to flash screen
+                            var flash = false;
+                            var task = setInterval(function() {
+                                if(flash = !flash) {
+                                    document.body.style.backgroundColor = '#ff0';
+                                } else {
+                                    document.body.style.backgroundColor = '#f00';
+                                }
+
+                            }, 1000);
+                        */
+
                     } else {
                         width++; 
                         elem.style.width = width + '%'; 
                         elem.innerHTML = width * 1 + '%';
+                        document.getElementById("item1").innerHTML="";
+                        document.getElementById("pF1").innerHTML="";
+                        document.getElementById("item2").innerHTML="";
+                        document.getElementById("pF2").innerHTML="";
+                        document.getElementById("item3").innerHTML="";
+                        document.getElementById("pF3").innerHTML="";
+                        document.getElementById("item4").innerHTML="";
+                        document.getElementById("pF4").innerHTML="";
+                        document.getElementById("item5").innerHTML="";
+                        document.getElementById("pF5").innerHTML="";
+                        document.getElementById("item6").innerHTML="";
+                        document.getElementById("pF6").innerHTML="";
+                        document.getElementById("item7").innerHTML="";
+                        document.getElementById("pF7").innerHTML="";
+                        document.getElementById("item8").innerHTML="";
+                        document.getElementById("pF8").innerHTML="";
+                        document.getElementById("item9").innerHTML="";
+                        document.getElementById("pF9").innerHTML="";
+                        document.getElementById("item10").innerHTML="";
+                        document.getElementById("pF10").innerHTML="";
+                        document.getElementById("item11").innerHTML="";
+                        document.getElementById("pF11").innerHTML="";
+                        document.getElementById("scanImage").style.display = "none"
                     } 
                 }
         }
@@ -380,7 +419,7 @@
                 console.log("Database created");
             });
             
-            */
+            
             var sql = "INSERT INTO partTest (id, Part, Result) VALUES ?";
             var values = [
                 [1, 'Base Color', 1],
@@ -402,7 +441,7 @@
                 console.log("Number of records inserted: " + result.affectedRows);
             });
             
-
+            */
             connection.end(() => {
                 console.log("Connection successfully Closed.");
             });
